@@ -10,13 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+       
     </head>
     <body>
-         <link rel="stylesheet" type="text/css" href="Background.css">
+        
         <h1>CUP CAKES!</h1>
         <form action="input.jsp">
            <input type="submit" name="btn" value="Enter">
-    
+    <link rel="stylesheet" type="text/css" href="Background.css">  
     </form>
     </body>
 </html>
