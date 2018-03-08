@@ -4,11 +4,13 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 07-03-2018, 14:38:06
+    Created on : 08-03-2018, 10:49:08
     Author     : sidad
 */
 
-body{
-    background-image: url(image/cupcake.jpeg) ;
-    background-repeat: no-repeat;
+img{
+    content: url(image/cupcakep.png);
+    width: 100px;
+    height: 100px;
+    position: relative;
 }
