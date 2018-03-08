@@ -21,8 +21,8 @@
             }
             div.menu{
                 position: relative;
-                width: 1447px;
-                height: 100px;
+                width: 100%;
+                height: 100%;
                 border: 10px solid #6f3806;
                 background-color: #323200;
             }
@@ -36,6 +36,7 @@
                 height: 70%;
                 background-color: black;
                 color: white;
+                
                 #linkref{
                  color: white;
                  text-decoration: none;
