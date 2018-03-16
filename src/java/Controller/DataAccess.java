@@ -18,7 +18,8 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 /**
- *
+ * General Data Acces Class.
+ * Total class handles everything
  * @author sidad
  */
 public class DataAccess {
@@ -57,9 +58,9 @@ public class DataAccess {
     }
 
     /**
-     *Finds User in database with corresponding name
-     * @param name
-     * @return User
+     *Finds User in database with corresponding name. Blaba
+     * @param name must be different from null
+     * @return User null if not found
      */
     public User getUserByName(String name) {
         User output = null;
