@@ -11,9 +11,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="background1.css">
+        <link rel="stylesheet" type="text/css" href="bar.css">         
         <title>JSP Page</title>
     </head>
     <body>
+        <ul>
+            <li><a class="active" href="index.jsp">Home</a></li>
+            <li><a class="active" href="logoutController">Logout</a></li>
+        </ul>
+    <center>
         <h1>User Page</h1>
         <%
             //Henter user fra session
@@ -24,12 +35,8 @@
         %>     
         
     <div>
-    Customer - <%=name%>. Balance - <%=balance%>
+    Customer name: <%=name%><br> Balance: <%=balance%>
     </div>
-    
-    <form action="logoutController">
-            <input type="submit" name="logout" value="Logout">
-    </form>
         <h1>Choose your cupcake:</h1>
         Cupcake Bottom:
         
@@ -42,7 +49,7 @@
             <option value="Almond" name="b5">Almond -,7</option>
 
         </select> <br> <br>
-        Cupcake Toppings:
+        Cupcake Toppings:<br>
         <select name="choiceT"> 
             <option value="Chocolate" name="t1">Chocolate -,5</option>
             <option value="Blueberry" name="t2">Blueberry -,5</option>
@@ -55,11 +62,12 @@
             <option value="Bluecheese" name="t9">BlueCheese -,9</option>
         </select> <br> <br>
         
-        <input type="submit" name="order" value="Order" >
+        <button type="submit" name="order" class="btn btn-primary">Order</button>
         </form>
         <form action="orders.jsp" name="orders">
-              <input type="submit" name="orders" value="View orders"
+              <button type="submit" name="orders" class="btn btn-primary">View orders</button>
         </form>
 
+    </center>        
     </body>
 </html>

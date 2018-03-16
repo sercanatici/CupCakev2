@@ -8,67 +8,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            div.Frame {
-                position: relative;
-                width: 300px;
-                height: 250px;
-                border: 10px solid #6f3806;
-                background-color: #323200;
-            }
-            body {
-                color: #7291c3;
-            }
-            div.menu{
-                position: relative;
-                width: 100%;
-                height: 100%;
-                border: 10px solid #6f3806;
-                background-color: #323200;
-            }
-
-            body{
-                background-color: brown;
-            }
-            
-            #navbar{
-                width: 100%;
-                height: 70%;
-                background-color: black;
-                color: white;
-                
-                #linkref{
-                 color: white;
-                 text-decoration: none;
-                 padding: 15px;
-                    
-                    
-                }
-                
-            }
-        </style>
-        
-        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="background1.css">
+        <link rel="stylesheet" type="text/css" href="bar.css"> 
         <title>JSP Page</title>
     </head>
     <body>
-          <div id="navbar">
-              <a href="index.jsp" id="linkref"> Start</a>
-              <a href="login.jsp" id="linkref"> Login</a>
-              <a href="registration.jsp" id="linkref">Register</a>
-        </div>  
-        
-        <div class="menu" align="center">
-            <img  src="image/logo.png" alt="cupcake"  width="450" height="450"/>
-        </div>
-        
+        <ul>
+            <li><a class="active" href="index.jsp">Home</a></li>
+            <li><a href="login.jsp">Login</a></li>
+        </ul>        
+    <center><br><br>
         <img  src="image/cupcakep.png" alt="cupcake"  width="200" height="200"/>
         <link rel="stylesheet" type="text/css" href="Cupcakepic.css"> 
         <div align="center" frame="">
             <div class="Frame">
-                
-                
+
+
                 <h1>Create a new Account</h1>
                 <form  method="post" action="RegistrationController" >
                     New Username:
@@ -77,13 +37,12 @@
                     <input type="password" name="newpass"><br>
                     Balance:
                     <input type="number" name="balance">  <br>
-                    <input type="submit" value="Register" name="regist">
+                    <button type="submit" name="regist" class="btn btn-primary">Register</button>
                 </form>
                 <form action="login.jsp">
-                    <input type="submit"  name="login" value="back to login"> 
-
+                    <button type="submit" name="login" class="btn btn-primary">back to login</button>
                     </div>
                 </form>
             </div>
-    </body>
-</html>
+            </body>
+            </html>
