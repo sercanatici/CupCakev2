@@ -50,7 +50,7 @@ public class RegistrationController extends HttpServlet {
         if (newuser.isEmpty() || newpass.isEmpty() || balance.isEmpty()) {
             request.getRequestDispatcher("regerror.jsp").forward(request, response);
         } 
-        //Tjekker om useren allerede findes(virker ikke)
+        //Tjekker om useren allerede findes
         if (testUser.getId() != 0) {
             request.getRequestDispatcher("error_user_exists.jsp").forward(request, response);
         } else {
