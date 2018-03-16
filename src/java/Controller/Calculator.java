@@ -16,4 +16,9 @@ public class Calculator {
         int res = a + b;
         return res;
     }
+     
+    public int CalculateQuantity(int a, int b, int q){
+        int res = (a + b) * q;
+        return res;
+    }
 }

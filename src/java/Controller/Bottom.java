@@ -14,7 +14,6 @@ public class Bottom {
     String bname;
     int price;
     
-    
     public Bottom(int id, String bname, int price){
         this.id = id;
         this.bname = bname;
