@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 /**
- * General Data Acces Class.
- * Total class handles everything
+ * General Data Acces Class. Total class handles everything
+ *
  * @author sidad
  */
 public class DataAccess {
@@ -31,7 +31,8 @@ public class DataAccess {
     }
 
     /**
-     *Creates a new user, and adds to database
+     * Creates a new user, and adds to database
+     *
      * @param user
      */
     public void newAccount(User user) {
@@ -58,7 +59,8 @@ public class DataAccess {
     }
 
     /**
-     *Finds User in database with corresponding name. Blaba
+     * Finds User in database with corresponding name. Blaba
+     *
      * @param name must be different from null
      * @return User null if not found
      */
@@ -90,7 +92,8 @@ public class DataAccess {
     }
 
     /**
-     *Finds Topping in database with corresponding name
+     * Finds Topping in database with corresponding name
+     *
      * @param name
      * @return Topping
      */
@@ -118,7 +121,8 @@ public class DataAccess {
     }
 
     /**
-     *Find Bottom in database with corresponding name
+     * Find Bottom in database with corresponding name
+     *
      * @param name
      * @return Bottom
      */
@@ -146,7 +150,8 @@ public class DataAccess {
     }
 
     /**
-     *Finds Topping in database with corresponding id
+     * Finds Topping in database with corresponding id
+     *
      * @param id
      * @return Topping
      */
@@ -173,7 +178,8 @@ public class DataAccess {
     }
 
     /**
-     *Finds Bottom in database with corresponding id
+     * Finds Bottom in database with corresponding id
+     *
      * @param id
      * @return Bottom
      */
@@ -200,7 +206,8 @@ public class DataAccess {
     }
 
     /**
-     *Updates balance of User in database to newBalance
+     * Updates balance of User in database to newBalance
+     *
      * @param user
      * @param newBalance
      * @return User
@@ -242,7 +249,9 @@ public class DataAccess {
     }
 
     /**
-     *Adds the LineItems in arraylist li to database and makes a new order in database for the User 
+     * Adds the LineItems in arraylist li to database and makes a new order in
+     * database for the User
+     *
      * @param li
      * @param user
      */
@@ -276,19 +285,19 @@ public class DataAccess {
     }
 
     /**
-     *Fins the orders made by the User in the database and returns them
+     * Fins the orders made by the User in the database and returns them
+     *
      * @param user
      * @return ArrayList Getorder
      */
     public ArrayList<GetOrder> getOrders(User user) {
 
-        
         ArrayList<GetOrder> array = new ArrayList();
         try {
-            
+
             ArrayList<LineItem> lsa = getLineItem(user.getId());
-            
-           int totalPrice = 0;
+
+            int totalPrice = 0;
 
             final String sql = "Select * from Orders "
                     + "where Orders.accountId = ?";
@@ -301,16 +310,14 @@ public class DataAccess {
             while (rs.next()) {
                 int orderId = rs.getInt("orderId");
                 String date = rs.getString("dato");
-                
-                for (int i = 0; i<lsa.size(); i++){
-                totalPrice += lsa.get(i).getPrice();
-            }
-                
-                array.add(new GetOrder(orderId, date, lsa, totalPrice));
-                
-                
-            }
 
+                for (int i = 0; i < lsa.size(); i++) {
+                    totalPrice += lsa.get(i).getPrice();
+                }
+
+                array.add(new GetOrder(orderId, date, lsa, totalPrice));
+
+            }
 
         } catch (SQLException ex) {
             return null;
@@ -318,31 +325,30 @@ public class DataAccess {
         return array;
     }
 
-    
-    private ArrayList<LineItem> getLineItem(int orderId){
+    private ArrayList<LineItem> getLineItem(int orderId) {
         ArrayList<LineItem> array = new ArrayList();
-        
-        try{
+
+        try {
             final String sql = "Select * from LineItem where orderId = ?";
-            
+
             PreparedStatement st = conn.getConnection().prepareStatement(sql);
-            
+
             st.setInt(1, orderId);
-            
+
             ResultSet rs = st.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 int intBottom = rs.getInt("bottomId");
                 int intTopping = rs.getInt("toppingId");
                 int quantity = rs.getInt("quantity");
                 int price = rs.getInt("price");
-                
+
                 Bottom bottom = getBottomById(intBottom);
                 Topping topping = getToppingById(intTopping);
-                
+
                 array.add(new LineItem(bottom, topping, quantity, price));
             }
-                    
-        }catch (SQLException ex){
+
+        } catch (SQLException ex) {
             return null;
         }
         return array;
