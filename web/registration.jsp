@@ -55,7 +55,7 @@
     <body>
           <div id="navbar">
               <a href="index.jsp" id="linkref"> Start</a>
-              <a href="input.jsp" id="linkref"> Login</a>
+              <a href="login.jsp" id="linkref"> Login</a>
               <a href="registration.jsp" id="linkref">Register</a>
         </div>  
         
@@ -79,7 +79,7 @@
                     <input type="number" name="balance">  <br>
                     <input type="submit" value="Register" name="regist">
                 </form>
-                <form action="input.jsp">
+                <form action="login.jsp">
                     <input type="submit"  name="login" value="back to login"> 
 
                     </div>

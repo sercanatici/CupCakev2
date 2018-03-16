@@ -12,6 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>øv mand</h1>
+        <h1>Username already exists</h1>
+        <form action="registration.jsp">
+            <input type="submit" name="register" value="Register new user"> 
+        </form>
+        <form action="login.jsp">
+            <input type="submit" name="login" value="Login with existing user"> 
+        </form>
     </body>
 </html>

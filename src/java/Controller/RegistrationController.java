@@ -54,8 +54,9 @@ public class RegistrationController extends HttpServlet {
         if (testUser.getId() != 0) {
             request.getRequestDispatcher("error_user_exists.jsp").forward(request, response);
         } else {
-            int newBalance = Integer.parseInt(balance);
-            da.newAccount(newuser, newpass, newBalance);
+            int intBalance = Integer.parseInt(balance);
+            User newUser = new User(intBalance, newuser, newpass);
+            da.newAccount(newUser);
             RequestDispatcher rd = request.getRequestDispatcher("input.jsp");
             rd.include(request, response);
         }

@@ -35,7 +35,7 @@ public class logoutController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession sesh = request.getSession();
         sesh.invalidate();
-        request.getRequestDispatcher("input.jsp").forward(request, response);
+        request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     
 

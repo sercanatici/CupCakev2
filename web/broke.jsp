@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Broke!!!!!!</h1>
+        <h1>Not enough funds to make purchase</h1>
+        <form action="homepage.jsp">
+            <input type="submit" name="homepage" value="Back to homepage"> 
+        </form>
     </body>
 </html>

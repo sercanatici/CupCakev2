@@ -18,7 +18,7 @@
          <input type="submit" name="register" value="Back to registration"> 
         
         </form>
-        <form action="input.jsp">
+        <form action="login.jsp">
          <input type="submit" name="login" value="Back to login"> 
         
         </form>

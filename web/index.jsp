@@ -15,7 +15,7 @@
     <body>
       <link rel="stylesheet" type="text/css" href="Background.css">    
         <h1>CUP CAKES!</h1>
-        <form action="input.jsp">
+        <form action="login.jsp">
            <input type="submit" name="btn" value="Enter">
     
     </form>

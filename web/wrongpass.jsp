@@ -14,7 +14,7 @@
     <body>
         <h1>Wrong Username / password!</h1>
 
-        <form action="input.jsp">
+        <form action="login.jsp">
             <input type="submit" name="login" value="Back to Login"> 
         </form>
         <form action="registration.jsp">
