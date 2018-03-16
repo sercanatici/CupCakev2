@@ -29,6 +29,10 @@ public class DataAccess {
         this.conn = new DBConnector();
     }
 
+    /**
+     *Creates a new user, and adds to database
+     * @param user
+     */
     public void newAccount(User user) {
         try {
             final String sql = "INSERT INTO Accounts"
@@ -52,6 +56,11 @@ public class DataAccess {
         }
     }
 
+    /**
+     *Finds User in database with corresponding name
+     * @param name
+     * @return User
+     */
     public User getUserByName(String name) {
         User output = null;
         try {
@@ -79,6 +88,11 @@ public class DataAccess {
         return output;
     }
 
+    /**
+     *Finds Topping in database with corresponding name
+     * @param name
+     * @return Topping
+     */
     public Topping getToppingByName(String name) {
         Topping output = null;
         try {
@@ -102,6 +116,11 @@ public class DataAccess {
         return output;
     }
 
+    /**
+     *Find Bottom in database with corresponding name
+     * @param name
+     * @return Bottom
+     */
     public Bottom getBottomByName(String name) {
         Bottom output = null;
         try {
@@ -125,6 +144,11 @@ public class DataAccess {
         return output;
     }
 
+    /**
+     *Finds Topping in database with corresponding id
+     * @param id
+     * @return Topping
+     */
     public Topping getToppingById(int id) {
         Topping output = null;
         try {
@@ -147,6 +171,11 @@ public class DataAccess {
         return output;
     }
 
+    /**
+     *Finds Bottom in database with corresponding id
+     * @param id
+     * @return Bottom
+     */
     public Bottom getBottomById(int id) {
         Bottom output = null;
         try {
@@ -169,6 +198,12 @@ public class DataAccess {
         return output;
     }
 
+    /**
+     *Updates balance of User in database to newBalance
+     * @param user
+     * @param newBalance
+     * @return User
+     */
     public User updateBalance(User user, int newBalance) {
         User output = null;
         try {
@@ -205,6 +240,11 @@ public class DataAccess {
         }
     }
 
+    /**
+     *Adds the LineItems in arraylist li to database and makes a new order in database for the User 
+     * @param li
+     * @param user
+     */
     public void makeOrder(ArrayList<LineItem> li, User user) {
         try {
             Calendar cal = Calendar.getInstance();
@@ -234,6 +274,11 @@ public class DataAccess {
         }
     }
 
+    /**
+     *Fins the orders made by the User in the database and returns them
+     * @param user
+     * @return ArrayList Getorder
+     */
     public ArrayList<GetOrder> getOrders(User user) {
 
         
