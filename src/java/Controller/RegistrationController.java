@@ -57,7 +57,7 @@ public class RegistrationController extends HttpServlet {
             int intBalance = Integer.parseInt(balance);
             User newUser = new User(intBalance, newuser, newpass);
             da.newAccount(newUser);
-            RequestDispatcher rd = request.getRequestDispatcher("input.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
             rd.include(request, response);
         }
 
